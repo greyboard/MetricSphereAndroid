@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MetricSphere" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/ms_emerald</item>
+        <item name="colorSecondary">@color/ms_cyan</item>
+        <item name="android:statusBarColor">@color/ms_bg</item>
+        <item name="android:navigationBarColor">@color/ms_bg</item>
+        <item name="android:windowBackground">@color/ms_bg</item>
+        <item name="android:colorBackground">@color/ms_bg</item>
+    </style>
+</resources>

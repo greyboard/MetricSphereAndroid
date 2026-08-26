@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ms_bg">#020617</color>
+    <color name="ms_surface">#0F172A</color>
+    <color name="ms_border">#334155</color>
+    <color name="ms_text">#F1F5F9</color>
+    <color name="ms_muted">#94A3B8</color>
+    <color name="ms_emerald">#34D399</color>
+    <color name="ms_cyan">#06B6D4</color>
+    <color name="ms_rose">#FB7185</color>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MetricSphere</string>
+    <string name="login_title">Gerät verbinden — PIN aus dem Desktop-Dashboard eingeben</string>
+    <string name="pin_hint">6-stellige PIN</string>
+    <string name="pin_helper">Im Browser unter „Gerät verbinden“ anzeigen</string>
+    <string name="login_button">Verbinden</string>
+    <string name="logging_in">Verbinden…</string>
+    <string name="error_pin">Bitte 6-stellige PIN eingeben.</string>
+    <string name="error_auth">PIN ungültig oder abgelaufen.</string>
+    <string name="error_network">Keine Verbindung. Netz und PIN prüfen.</string>
+    <string name="error_generic">Verbindung fehlgeschlagen.</string>
+    <string name="signup_title">Noch keinen Account?</string>
+    <string name="signup_body">MetricSphere einrichten lassen — wir melden uns mit den nächsten Schritten.</string>
+    <string name="signup_cta">Account anfragen</string>
+</resources>

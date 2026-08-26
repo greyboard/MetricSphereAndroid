@@ -25,7 +25,11 @@ object AuthClient {
         .build()
 
     /** PIN → Admin redeem → instance complete → session cookie (1 year). */
-    fun pairWithPin(pinRaw: String, deviceName: String = ""): LoginResult {
+    fun pairWithPin(
+        pinRaw: String,
+        deviceName: String = "",
+        clientDeviceId: String = "",
+    ): LoginResult {
         val pin = pinRaw.filter { it.isDigit() }
         if (pin.length != 6) {
             return LoginResult(ok = false, errorMessage = "PIN muss 6 Ziffern haben.", httpCode = 400)
@@ -72,6 +76,10 @@ object AuthClient {
         val trimmedName = deviceName.trim()
         if (trimmedName.isNotEmpty()) {
             completeJson.put("device_name", trimmedName.take(80))
+        }
+        val trimmedClientId = clientDeviceId.trim()
+        if (trimmedClientId.isNotEmpty()) {
+            completeJson.put("client_device_id", trimmedClientId.take(64))
         }
         val completeBody = completeJson.toString().toRequestBody(jsonType)
         val completeReq = Request.Builder()

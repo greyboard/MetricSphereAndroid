@@ -75,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
         setLoading(true)
         lifecycleScope.launch {
             val result = withContext(Dispatchers.IO) {
-                AuthClient.pairWithPin(pin)
+                AuthClient.pairWithPin(pin, DeviceName.resolve(this@LoginActivity))
             }
             setLoading(false)
 

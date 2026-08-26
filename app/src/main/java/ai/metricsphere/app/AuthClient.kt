@@ -25,7 +25,7 @@ object AuthClient {
         .build()
 
     /** PIN → Admin redeem → instance complete → session cookie (1 year). */
-    fun pairWithPin(pinRaw: String): LoginResult {
+    fun pairWithPin(pinRaw: String, deviceName: String = ""): LoginResult {
         val pin = pinRaw.filter { it.isDigit() }
         if (pin.length != 6) {
             return LoginResult(ok = false, errorMessage = "PIN muss 6 Ziffern haben.", httpCode = 400)
@@ -68,7 +68,12 @@ object AuthClient {
             return LoginResult(ok = false, errorMessage = e.message, httpCode = -1)
         }
 
-        val completeBody = JSONObject().put("grant", grant).toString().toRequestBody(jsonType)
+        val completeJson = JSONObject().put("grant", grant)
+        val trimmedName = deviceName.trim()
+        if (trimmedName.isNotEmpty()) {
+            completeJson.put("device_name", trimmedName.take(80))
+        }
+        val completeBody = completeJson.toString().toRequestBody(jsonType)
         val completeReq = Request.Builder()
             .url("$origin/api/device-pair/complete")
             .header("Accept", "application/json")
